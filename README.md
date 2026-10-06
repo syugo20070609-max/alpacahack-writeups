@@ -13,21 +13,28 @@
 ### コマンド・Python
 | 種類 | 名前 | 用途 |
 |---|---|---|
-| ??? | ??? | ??? |
+| Linux | `base64 -d` | Base64をデコードする |
+| Linux | `brotli -dc` | Brotli圧縮を展開して標準出力に出す |
+| Linux | パイプ (`\|`) | コマンドの出力を次のコマンドにつなぐ |
+| Python | `math.gcd()` | 最大公約数を求める（共通素数pの特定） |
+| Python | `pow(e, -1, phi)` | 法phiでのeの逆元（秘密鍵d）を求める |
+| Python | `pow(c, d, n)` | RSAの復号（べき乗剰余） |
 
 ### ツール
 | ツール | 用途 |
 |---|---|
-| ??? | ??? |
+| base64 / brotli | エンコード・圧縮された埋め込みデータの復元 |
+| Python | RSAの素因数分解と復号の自動化 |
 
 ### 知識
 | 分野 | 内容 |
 |---|---|
-| RSA | ??? (Shared Primeで学んだこと) |
-| C# | File-based appの仕組み |
+| RSA | 素数を使い回すと、gcd(n1, n2) だけで素因数分解できる |
+| C# | .NET 10のFile-based apps（`chal.cs`を直接実行できる） |
+| Rev | Base64 → 圧縮の定番パターン。検証ロジックを読めば正解が分かる |
 
 ## 解いた問題一覧
 | カテゴリ | 問題名 | 難易度 | 使用ツール | 詰まった点 | 学び |
 |---|---|---|---|---|---|
-| Rev | C# File-based app | Easy | ??? | ??? | ??? |
-| Crypto | Shared Prime | Medium | Python | ??? | ??? |
+| Rev | C# File-based app | Easy | base64, brotli | ??? | プログラムが正解をどう作っているかを読むのが基本。Base64→圧縮はCTFの定番 |
+| Crypto | Shared Prime | Medium | Python | ??? | 素数の使い回しはgcdだけで破れる。RSAの安全性は素因数分解の困難さが前提 |
